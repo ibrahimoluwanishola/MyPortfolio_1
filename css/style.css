@@ -8,10 +8,10 @@
 }
 
 .navigation {
-    height: 100vh;
-    width: 100vw;
+    height: 150px;
+    width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: end;
 }
 
 .navigation .nav-menu {
@@ -19,19 +19,110 @@
     list-style: none;
     gap: 20px;
     padding: 0 50px 0 0;
-    font-size: 18px;
     margin-top: 20px;
+    transform: translate(-60%);
+    transition: transform 0.5s ease-in-out;
 }
 
-.navigation .nav-menu,
-ul li a {
+.navigation .nav-menu li a {
     color: black;
     font-weight: 600;
+    font-size: 14px;
 }
+
+.navigation input[type="checkbox"]{
+    width: 40px;
+    display: none;
+    height: 40px;
+}
+
+
+.navigation .nav-icons{
+    width: 10px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.navigation .nav-icons .icon{
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 2px;
+}
+
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .navigation{
+        position: relative;
+    }
+
+    .navigation .nav-icons{
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        height: 26px;
+        width: 32px;
+        z-index: 2;
+    }
+
+    .navigation .nav-menu{
+        display: none;
+    }
+
+    .navigation input[type="checkbox"]{
+        position: absolute;
+        top: 10px;
+        right: 31px;
+    }
+
+    .navigation input:checked ~ ul{
+        transform: translate(0, 0);
+        display: block;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        gap: 30px;
+    }
+
+
+    .navigation input:checked ~ .nav-icons .icon1{
+        transform: rotate(45deg);
+    }
+    .navigation input:checked ~ .nav-icons .icon2{
+        transform: scaleY(0);
+    }
+    .navigation input:checked ~ .nav-icons .icon3{
+        transform: rotate(-45deg);
+    }
+
+
+    .navigation .nav-icons .icon3{
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    
+    .navigation .nav-icons .icon1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+      }
+      
+    .navigation .nav-icons .icon2 {
+        transition: transform 0.2s ease-in-out;
+      }
+}
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
