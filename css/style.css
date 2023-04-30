@@ -24,6 +24,7 @@
 .navigation .nav-menu,
 ul li a {
     color: black;
+    font-weight: 600;
 }
 
 
