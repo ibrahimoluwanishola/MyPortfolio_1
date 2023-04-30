@@ -5,6 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Heebo', sans-serif;
+    appearance: none;
 }
 
 .navigation {
@@ -31,9 +32,8 @@
 }
 
 .navigation input[type="checkbox"]{
-    width: 40px;
-    display: none;
-    height: 40px;
+    width: 25px;
+    height: 25px;
 }
 
 
@@ -69,7 +69,6 @@
         right: 30px;
         height: 26px;
         width: 32px;
-        z-index: 2;
     }
 
     .navigation .nav-menu{
@@ -78,8 +77,9 @@
 
     .navigation input[type="checkbox"]{
         position: absolute;
-        top: 10px;
+        top: 20px;
         right: 31px;
+        z-index: 1;
     }
 
     .navigation input:checked ~ ul{
